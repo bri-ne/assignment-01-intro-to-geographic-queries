@@ -7,8 +7,19 @@
 */
 
 -- Enter your SQL query here
-select ...
 
+SELECT ((count(*)-206354)*100)/206354::numeric || '%' AS percentchange
+  
+ FROM indego_trips_2020_q2
+
+/* RESULT: -9.58%. When I first wrote this I had multiplied the difference in counts 
+by 100 first before dividing by the 
+count from 2020 because if I did it the traditional way carto told me it was 0. 
+I don't know why. either way the result i have above works. 
+
+It also would not let me cast the result as a string. 
+It threw the error: "Syntax error: operator does not exist: bigint / text"
+*/
 
 
 /*

@@ -4,4 +4,5 @@
 */
 
 -- Enter your SQL query here
-select ...
+SELECT cartodb_id, id, addressstreet, (the_geom <-> ST_SETSRID(ST_MAKEPOINT(-75.1923, 39.9520), 4326)::geometry) * 111139 as distance_to_meyerson
+FROM stations
